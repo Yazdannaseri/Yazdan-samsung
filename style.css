@@ -16,6 +16,10 @@
 .st1 {
   background-color: rgb(240, 226, 242);
 }
+.top-nav{
+  display: flex;
+  gap: 16px;
+}
 
 .aks8 {
   margin: 25px;
