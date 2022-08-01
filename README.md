@@ -1,2 +1,2 @@
-# Yazdan-samsung
-my main course project
+# samsung
+Yazdan main project(samsung)
