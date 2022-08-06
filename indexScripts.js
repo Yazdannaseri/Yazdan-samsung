@@ -15,7 +15,7 @@ function initSlides() {
     slides[slideIndex].classList.add("--active");
     dots[slideIndex].classList.add("active");
     slideIndex++;
-    setTimeout(initSlides, 1000);
+    setTimeout(initSlides, 10000);
 }
 
 // to initiate menu
