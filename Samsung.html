@@ -9,17 +9,45 @@
     <title>Samsung US | Mobile | TV | Home Electronics | Home Appliances | Samsung US</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="site-logo.jpg" />
+    <script src="myscripts.js"></script>
+
     <header class="l1">
         <a href="https://www.samsung.com/us/"><img class="ha1" src="header1.jpg"></a>
-        <div class="top-nav">
-            <div class="top-nav-item">Mobile</div>
-            <div class="top-nav-item">TV &amp; Audio</div>
-            <div class="top-nav-item">Appliances</div>
-            <div class="top-nav-item">Computing</div>
-            <div class="top-nav-item">Display</div>
-            <div class="top-nav-item">#You Make</div>
-            <div class="top-nav-item">Gift ideas</div>
+
+        <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'Mobile')">Mobile</button>
+            <button class="tablinks" onclick="openCity(event, 'TV &amp; Audio')">TV &amp; Audio</button>
+            <button class="tablinks" onclick="openCity(event, 'Appliances')">Appliances</button>
+            <button class="tablinks" onclick="openCity(event, 'Camputing')">Computing</button>
+            <button class="tablinks" onclick="openCity(event, 'Display')">Display</button>
+            <button class="tablinks" onclick="openCity(event, '#You Make')">#You Make</button>
+            <button class="tablinks" onclick="openCity(event, 'Gift ideas')">Gift ideas</button>
         </div>
+
+        <!-- Tab content -->
+        <div id="Mobile" class="tabcontent">
+            <h3>Mobile</h3>
+            <p><a href="https://www.samsung.com/us/smartphones/galaxy-s22-ultra/"> galaxy-s22-ultra <img class="m1"
+                        src="aks13.jpg" </a></p>
+            <p><a href="https://www.samsung.com/us/smartphones/galaxy-s22/"> galaxy-s22<img class="m1" src="aks14.jpg"
+                        </a></p>
+            <p><a href="https://www.samsung.com/us/smartphones/galaxy-s21-5g/galaxy-s21-fe-5g/"> galaxy-s21-fe<img
+                        class="m1" src="aks15.jpg" </a></p>
+            <p><a href="https://www.samsung.com/us/smartphones/galaxy-a-series"> Serie A<img class="m1" src="aks16.jpg"
+                        </a></p>
+            <p><a href="https://www.samsung.com/us/mobile"> All Mobile<img class="m1" src="aks17.jpg" </a></p>
+        </div>
+
+        <div id="Mobile" class="tabcontent">
+            <h3>Mobile</h3>
+            <p><a href=""> </a></p>
+        </div>
+
+        <div id="Tokyo" class="tabcontent">
+            <h3>Tokyo</h3>
+            <p>Tokyo is the capital of Japan.</p>
+        </div>
+
     </header>
 
 </head>
@@ -74,8 +102,28 @@
             }
             slides[slideIndex - 1].style.display = "block";
             dots[slideIndex - 1].className += " active";
-            setTimeout(showSlides, 2000); // Change image every 2 seconds
+            setTimeout(showSlides, 15000);
         }
+
+        function openCity(evt, cityName) {
+
+            var i, tabcontent, tablinks;
+
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        } 
     </script>
 
     <h1 class="h1">
