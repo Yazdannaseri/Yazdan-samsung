@@ -1,7 +1,7 @@
 let slideIndex = 0;
 initSlides();
 
-// 
+// to initiate slide show
 function initSlides() {
     let slides = document.getElementsByClassName("mySlides");
     let dots = document.getElementsByClassName("dot");
@@ -18,22 +18,46 @@ function initSlides() {
     setTimeout(initSlides, 1000);
 }
 
-function openCity(evt, cityName) {
+// to initiate menu
+// function openCity(evt, cityName) {
 
-    var i, tabcontent, tablinks;
+//     var i, tabcontent, tablinks;
 
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
+//     tabcontent = document.getElementsByClassName("tabcontent");
+//     for (i = 0; i < tabcontent.length; i++) {
+//         tabcontent[i].style.display = "none";
+//     }
+
+
+//     tablinks = document.getElementsByClassName("tablinks");
+//     for (i = 0; i < tablinks.length; i++) {
+//         tablinks[i].className = tablinks[i].className.replace(" active", "");
+//     }
+
+
+//     document.getElementById(cityName).style.display = "block";
+//     evt.currentTarget.className += " active";
+// }
+// new menu code
+initMenu();
+function initMenu(){
+    const tabLinks = document.querySelectorAll('.tab .tablinks');
+    tabLinks.forEach(tabLink => {
+        const onMenuEnter = ()=>{
+            const menuId = tabLink.getAttribute('data-menuid');
+            showTab(menuId);
+        }
+        const onMenuLeave = ()=>{
+            const menuId = tabLink.getAttribute('data-menuid');
+            hideTab(menuId);
+        }
+        tabLink.addEventListener('mouseenter',onMenuEnter);
+        tabLink.addEventListener('mouseleave',onMenuLeave);
+    });
+    function showTab(menuId){
+        document.getElementById(menuId).style.display = "block";
     }
-
-
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    function hideTab(menuId){
+        document.getElementById(menuId).style.display = "none";
     }
-
-
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
-} 
+}
