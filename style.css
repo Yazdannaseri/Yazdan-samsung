@@ -117,6 +117,9 @@ body {
 .mySlides {
   display: none;
 }
+.mySlides.--active{
+  display:block;
+}
 
 img {
   vertical-align: middle;
