@@ -106,10 +106,6 @@ Add a black background color to the top navigation bar .topnav {
   margin-left: 50px;
 }
 
-  {
-  box-sizing: border-box;
-}
-
 body {
   font-family: Verdana, sans-serif;
 }
@@ -121,8 +117,27 @@ body {
   display:block;
 }
 
+.site-header{
+  margin: 0 auto;
+  width: 1000px;
+}
+
 img {
   vertical-align: middle;
+  margin: 0 auto;
+}
+.tab{
+  position: relative;
+  left:50%;
+  transform:translateX(-50%);
+}
+.wrapper{
+  margin:0 auto;
+  max-width: 1000px;
+  display: flex;
+  position: static;
+  left:50%;
+  transform:translateX(-16%);
 }
 
 /* Slideshow container */
