@@ -27,13 +27,27 @@ function initMenu(){
             const menuId = tabLink.getAttribute('data-menuid');
             showTab(menuId);
         }
-        const onMenuLeave = ()=>{
+        const onMenuLeave = (e)=>{
             const menuId = tabLink.getAttribute('data-menuid');
-            hideTab(menuId);
+            if(e.relatedTarget.id == menuId){
+                //
+            }else{
+                hideTab(menuId);
+            }
         }
         tabLink.addEventListener('mouseenter',onMenuEnter);
         tabLink.addEventListener('mouseleave',onMenuLeave);
     });
+    //
+    // add mouse leave event to tab content
+
+    const tabContents = document.getElementsByClassName('tabcontent')
+    for(let i=0; i<tabContents.length; i++){
+        tabContents[i].addEventListener('mouseleave',(e)=>{
+            hideTab(tabContents[i].id);
+        } );
+    }
+    //
     function showTab(menuId){
         document.getElementById(menuId).style.display = "block";
     }
