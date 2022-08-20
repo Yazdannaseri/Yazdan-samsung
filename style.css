@@ -1,12 +1,7 @@
 .ha1 {
-  width: 100px;
+  width: 85px;
   margin: 0px;
   padding: 10px;
-}
-
-.l1 {
-  display: flexbox;
-
 }
 
 .aks7 {
@@ -238,4 +233,5 @@ img {
   padding: 6px 12px;
   border: 1px solid #fff;
   border-top: none;
+  margin-left:40px ;
 }
